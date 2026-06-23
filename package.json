@@ -1,0 +1,21 @@
+{
+  "name": "fluxpeer-site",
+  "private": true,
+  "type": "module",
+  "description": "fluxpeer.org — open-source mesh networking site + docs",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@lucide/svelte": "^1.18.0"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^7.1.2",
+    "@tailwindcss/vite": "^4.3.1",
+    "svelte": "^5.53.0",
+    "tailwindcss": "^4.3.1",
+    "vite": "^8.0.9"
+  }
+}

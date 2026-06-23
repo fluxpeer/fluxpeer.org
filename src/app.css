@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* fluxpeer brand — dark indigo, aligned with openprx.dev (see ../brand/). */
+@theme {
+  --color-bg: #07080c;
+  --color-surface: #0f1220;
+  --color-surface2: #12162a;
+  --color-line: #232a44;
+  --color-fg: #f2f5ff;
+  --color-muted: #a0abc8;
+  --color-brand: #6366f1;
+  --color-brand-strong: #818cf8;
+  --color-accent: #a5b4fc;
+  --color-ok: #34d399;
+  --color-warn: #fbbf24;
+  --color-danger: #f87171;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  margin: 0;
+}
+
+a { color: inherit; text-decoration: none; }
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-strong);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Subtle radial glow behind the hero, openprx-style. */
+.hero-glow {
+  background:
+    radial-gradient(60% 50% at 50% 0%, color-mix(in oklab, var(--color-brand) 22%, transparent), transparent 70%);
+}
