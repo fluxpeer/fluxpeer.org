@@ -3,6 +3,7 @@
   import Home from './pages/Home.svelte'
   import Download from './pages/Download.svelte'
   import Docs from './pages/Docs.svelte'
+  import Privacy from './pages/Privacy.svelte'
   import { UI_LANGS, isRtl, t } from './i18n.js'
   import { Menu, X } from '@lucide/svelte'
 
@@ -40,6 +41,7 @@
       <div class="hidden md:flex items-center gap-6 text-sm text-muted ml-2">
         <a href="#/docs" class:text-fg={section === 'docs'} class="hover:text-fg">{tr('nav.docs')}</a>
         <a href="#/download" class:text-fg={section === 'download'} class="hover:text-fg">{tr('nav.download')}</a>
+        <a href="#/privacy" class:text-fg={section === 'privacy'} class="hover:text-fg">{tr('nav.privacy')}</a>
       </div>
       <div class="flex-1"></div>
       <select bind:value={lang} class="bg-surface border border-line rounded-md px-2 py-1 text-sm text-muted">
@@ -61,6 +63,7 @@
       <div class="md:hidden border-t border-line bg-surface px-5 py-4 flex flex-col gap-3.5 text-sm">
         <a href="#/docs" class="text-muted hover:text-fg">{tr('nav.docs')}</a>
         <a href="#/download" class="text-muted hover:text-fg">{tr('nav.download')}</a>
+        <a href="#/privacy" class="text-muted hover:text-fg">{tr('nav.privacy')}</a>
         <a href="https://github.com/fluxpeer" target="_blank" rel="noreferrer" class="text-muted hover:text-fg">{tr('nav.github')}</a>
         <a href={COMMERCIAL} class="bg-brand hover:bg-brand-strong text-white rounded-md px-3 py-2 text-center transition">{tr('nav.getApp')}</a>
       </div>
@@ -72,6 +75,8 @@
       <Docs {lang} {route} />
     {:else if section === 'download'}
       <Download {lang} {COMMERCIAL} />
+    {:else if section === 'privacy'}
+      <Privacy {lang} />
     {:else}
       <Home {lang} {COMMERCIAL} />
     {/if}
@@ -89,6 +94,7 @@
         <ul class="space-y-2.5 text-sm text-muted">
           <li><a class="hover:text-fg" href="#/docs">{tr('nav.docs')}</a></li>
           <li><a class="hover:text-fg" href="#/download">{tr('nav.download')}</a></li>
+          <li><a class="hover:text-fg" href="#/privacy">{tr('footer.privacy')}</a></li>
           <li><a class="hover:text-fg" href={COMMERCIAL}>{tr('footer.app')}</a></li>
         </ul>
       </div>

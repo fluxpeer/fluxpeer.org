@@ -93,4 +93,5 @@
       <p class="mt-3 text-muted">{tr('open.closedItems')}</p>
     </div>
   </div>
+  <p class="mt-5 max-w-3xl text-sm text-muted leading-relaxed">{tr('open.note')}</p>
 </section>

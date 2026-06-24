@@ -1,5 +1,6 @@
 <script>
   import { t } from '../i18n.js'
+  import { docs } from '../docs.js'
   let { lang, route } = $props()
   const tr = (k) => t(lang, k)
 
@@ -36,6 +37,7 @@
   const titleKey = $derived(
     groups.flatMap((g) => g.items).find(([s]) => s === slug)?.[1] || 'docs.usage.quickstart',
   )
+  const content = $derived(docs[lang]?.[slug] || docs.en?.[slug] || tr('docs.placeholder'))
 </script>
 
 <div class="mx-auto max-w-6xl px-5 py-10 grid md:grid-cols-[15rem_1fr] gap-10">
@@ -65,8 +67,8 @@
   <!-- Content -->
   <article class="min-w-0">
     <h1 class="text-3xl font-bold">{tr(titleKey)}</h1>
-    <div class="mt-6 rounded-xl border border-line bg-surface p-6 text-muted">
-      {tr('docs.placeholder')}
+    <div class="docs-content mt-6 rounded-xl border border-line bg-surface p-6 text-muted">
+      {@html content}
     </div>
   </article>
 </div>
